@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Extrato Financeiro - Finanças+</title>
+  <link rel="stylesheet" href="estilo.css">
+  <link rel="stylesheet" href="tabelas.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header class="topo-site">
+    <div class="logo">
+      <i class="fas fa-wallet"></i> Finanças+
+    </div>
+    <div class="menu-direita">
+      <button class="btn-ranking">
+        <i class="fas fa-trophy"></i> Ranking
+      </button>
+      <a href="login.html" class="btn-login">Sair</a>
+      <div class="menu-toggle" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+    <nav class="menu-links" id="menu-links">
+      <a href="index.html">Início</a>
+      <a href="metas.html">Metas</a>
+      <a href="extrato.html" class="active">Extrato</a>
+      <a href="relatorios.html">Relatórios</a>
+      <a href="ranking.html" class="link-ranking"></a>
+      <a href="compartilhar.html">Compartilhar</a>
+    </nav>
+  </header>
+
+  <main class="container-extrato">
+    <div class="header-extrato">
+      <h1>Extrato Financeiro</h1>
+      <div class="botoes-extrato">
+        <button class="btn-extrato" id="btnNovoLancamento">
+          <i class="fas fa-plus"></i> Novo Lançamento
+        </button>
+      </div>
+    </div>
+    
+    <div class="filtros-extrato">
+      <div class="input-group">
+        <label for="periodo">Período:</label>
+        <select id="periodo">
+          <option value="tudo">Todo o período</option>
+          <option value="30">Últimos 30 dias</option>
+          <option value="90" selected>Últimos 3 meses</option>
+          <option value="180">Últimos 6 meses</option>
+          <option value="365">Último ano</option>
+        </select>
+      </div>
+      
+      <div class="input-group">
+        <label for="tipo">Tipo:</label>
+        <select id="tipo">
+          <option value="todos">Todos</option>
+          <option value="receita">Receitas</option>
+          <option value="despesa">Despesas</option>
+        </select>
+      </div>
+      
+      <div class="input-group">
+        <label for="categoria">Categoria:</label>
+        <select id="categoria">
+          <option value="todas">Todas</option>
+          <option value="alimentacao">Alimentação</option>
+          <option value="moradia">Moradia</option>
+          <option value="transporte">Transporte</option>
+          <option value="lazer">Lazer</option>
+          <option value="saude">Saúde</option>
+          <option value="educacao">Educação</option>
+          <option value="outros">Outros</option>
+        </select>
+      </div>
+      
+      <button class="btn-filtrar" id="btnFiltrar">Aplicar Filtros</button>
+      <button class="btn-limpar" id="btnLimpar">Limpar Filtros</button>
+    </div>
+    
+    <div class="tabela-container">
+      <table class="tabela-extrato" id="tabelaExtrato">
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Descrição</th>
+            <th>Categoria</th>
+            <th>Valor</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Os lançamentos serão adicionados dinamicamente aqui -->
+        </tbody>
+      </table>
+    </div>
+    
+    <!-- Modal Novo Lançamento -->
+    <div class="modal" id="modalNovoLancamento">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Adicionar Lançamento</h2>
+        <form id="formNovoLancamento">
+          <div class="input-group">
+            <label for="tipoLancamento">Tipo:</label>
+            <select id="tipoLancamento" required>
+              <option value="">Selecione</option>
+              <option value="receita">Receita</option>
+              <option value="despesa">Despesa</option>
+            </select>
+          </div>
+          
+          <div class="input-group">
+            <label for="dataLancamento">Data:</label>
+            <input type="date" id="dataLancamento" required>
+          </div>
+          
+          <div class="input-group">
+            <label for="descricaoLancamento">Descrição:</label>
+            <input type="text" id="descricaoLancamento" placeholder="Ex: Salário, Aluguel..." required>
+          </div>
+          
+          <div class="input-group">
+            <label for="categoriaLancamento">Categoria:</label>
+            <select id="categoriaLancamento" required>
+              <option value="">Selecione</option>
+              <optgroup label="Receitas">
+                <option value="salario">Salário</option>
+                <option value="freelance">Freelance</option>
+                <option value="investimentos">Investimentos</option>
+              </optgroup>
+              <optgroup label="Despesas">
+                <option value="moradia">Moradia</option>
+                <option value="alimentacao">Alimentação</option>
+                <option value="transporte">Transporte</option>
+                <option value="lazer">Lazer</option>
+                <option value="saude">Saúde</option>
+              </optgroup>
+            </select>
+          </div>
+          
+          <div class="input-group">
+            <label for="valorLancamento">Valor:</label>
+            <input type="number" id="valorLancamento" min="0" step="0.01" placeholder="R$ 0,00" required>
+          </div>
+          
+          <div class="input-group">
+            <label for="observacaoLancamento">Observação:</label>
+            <textarea id="observacaoLancamento" rows="3"></textarea>
+          </div>
+          
+          <button type="submit" class="btn-submit">Salvar Lançamento</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="rodape">
+    <div class="rodape-conteudo">
+      <div class="rodape-info">
+        <h3><i class="fas fa-wallet"></i> Finanças+</h3>
+        <p>Sua vida financeira organizada e sob controle</p>
+        <p>contato@financasplus.com.br</p>
+      </div>
+      <div class="rodape-links">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="rodape-copyright">
+      &copy; 2023 Finanças+ - Todos os direitos reservados.
+    </div>
+  </footer>
+
+  <script src="menu.js"></script>
+  <script src="extrato.js"></script>
+  <script src="tabelas.js"></script>
+</body>
+</html>

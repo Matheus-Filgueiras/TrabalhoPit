@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relatórios - Finanças+</title>
+  <link rel="stylesheet" href="Estilo.css">
+  <link rel="stylesheet" href="relatorios.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="topo-site">
+    <div class="logo">
+      <i class="fas fa-wallet"></i> Finanças+
+    </div>
+    <div class="menu-direita">
+      <button class="btn-ranking">
+        <i class="fas fa-trophy"></i> Ranking
+      </button>
+      <a href="login.html" class="btn-login">Sair</a>
+      <div class="menu-toggle" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+    <nav class="menu-links" id="menu-links">
+      <a href="index.html">Início</a>
+      <a href="metas.html">Metas</a>
+      <a href="extrato.html">Extrato</a>
+      <a href="relatorios.html" class="active">Relatórios</a>
+      <a href="ranking.html" class="link-ranking"></a>
+      <a href="compartilhar.html">Compartilhar</a>
+    </nav>
+  </header>
+
+  <main class="container-relatorios">
+    <h1 class="titulo-pagina">Relatórios Financeiros</h1>
+    
+    <div class="filtros-relatorios">
+      <div class="input-group">
+        <label for="periodoRelatorio">Período:</label>
+        <select id="periodoRelatorio">
+          <option value="30">Últimos 30 dias</option>
+          <option value="90" selected>Últimos 3 meses</option>
+          <option value="180">Últimos 6 meses</option>
+          <option value="365">Último ano</option>
+          <option value="personalizado">Personalizado</option>
+        </select>
+      </div>
+      
+      <div class="input-group range" id="rangePersonalizado" style="display: none;">
+        <label for="dataInicio">De:</label>
+        <input type="date" id="dataInicio">
+        <label for="dataFim">Até:</label>
+        <input type="date" id="dataFim">
+      </div>
+      
+      <button class="btn-gerar-relatorio">Gerar Relatório</button>
+    </div>
+    
+    <div class="relatorios-grid">
+      <div class="relatorio-card grande">
+        <h2>Despesas por Categoria</h2>
+        <div class="grafico-container">
+          <canvas id="graficoCategorias"></canvas>
+        </div>
+        <div class="relatorio-acoes">
+          <button class="btn-relatorio"><i class="fas fa-download"></i> Exportar</button>
+          <button class="btn-relatorio"><i class="fas fa-print"></i> Imprimir</button>
+        </div>
+      </div>
+      
+      <div class="relatorio-card">
+        <h2>Receitas vs Despesas</h2>
+        <div class="grafico-container">
+          <canvas id="graficoReceitasDespesas"></canvas>
+        </div>
+      </div>
+      
+      <div class="relatorio-card">
+        <h2>Evolução Mensal</h2>
+        <div class="grafico-container">
+          <canvas id="graficoEvolucao"></canvas>
+        </div>
+      </div>
+      
+      <div class="relatorio-card lista">
+        <h2>Top Despesas</h2>
+        <ul class="lista-despesas">
+          <li>
+            <span class="categoria">Moradia</span>
+            <span class="valor">R$ 1.200,00</span>
+            <span class="percentual">25%</span>
+          </li>
+          <li>
+            <span class="categoria">Alimentação</span>
+            <span class="valor">R$ 900,00</span>
+            <span class="percentual">19%</span>
+          </li>
+          <li>
+            <span class="categoria">Transporte</span>
+            <span class="valor">R$ 600,00</span>
+            <span class="percentual">13%</span>
+          </li>
+          <li>
+            <span class="categoria">Lazer</span>
+            <span class="valor">R$ 450,00</span>
+            <span class="percentual">9%</span>
+          </li>
+          <li>
+            <span class="categoria">Saúde</span>
+            <span class="valor">R$ 300,00</span>
+            <span class="percentual">6%</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="relatorio-completo">
+      <h2>Relatório Completo</h2>
+      <div class="dados-relatorio">
+        <div class="dados-card">
+          <h3>Resumo Financeiro</h3>
+          <div class="dados-item">
+            <span>Receitas Totais:</span>
+            <span class="valor receita">R$ 8.450,00</span>
+          </div>
+          <div class="dados-item">
+            <span>Despesas Totais:</span>
+            <span class="valor despesa">R$ 5.230,00</span>
+          </div>
+          <div class="dados-item">
+            <span>Saldo:</span>
+            <span class="valor saldo">R$ 3.220,00</span>
+          </div>
+        </div>
+        
+        <div class="dados-card">
+          <h3>Média Mensal</h3>
+          <div class="dados-item">
+            <span>Receitas:</span>
+            <span class="valor receita">R$ 2.816,67</span>
+          </div>
+          <div class="dados-item">
+            <span>Despesas:</span>
+            <span class="valor despesa">R$ 1.743,33</span>
+          </div>
+          <div class="dados-item">
+            <span>Saldo:</span>
+            <span class="valor saldo">R$ 1.073,33</span>
+          </div>
+        </div>
+        
+        <div class="dados-card">
+          <h3>Despesas por Categoria</h3>
+          <div class="dados-item">
+            <span>Moradia:</span>
+            <span class="valor">R$ 1.200,00 (25%)</span>
+          </div>
+          <div class="dados-item">
+            <span>Alimentação:</span>
+            <span class="valor">R$ 900,00 (19%)</span>
+          </div>
+          <div class="dados-item">
+            <span>Transporte:</span>
+            <span class="valor">R$ 600,00 (13%)</span>
+          </div>
+          <div class="dados-item">
+            <span>Lazer:</span>
+            <span class="valor">R$ 450,00 (9%)</span>
+          </div>
+          <div class="dados-item">
+            <span>Saúde:</span>
+            <span class="valor">R$ 300,00 (6%)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="rodape">
+    <div class="rodape-conteudo">
+      <div class="rodape-info">
+        <h3><i class="fas fa-wallet"></i> Finanças+</h3>
+        <p>Sua vida financeira organizada e sob controle</p>
+        <p>contato@financasplus.com.br</p>
+      </div>
+      <div class="rodape-links">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="rodape-copyright">
+      &copy; 2023 Finanças+ - Todos os direitos reservados.
+    </div>
+  </footer>
+
+  <script src="menu.js"></script>
+  <script src="relatorios.js"></script>
+</body>
+</html>

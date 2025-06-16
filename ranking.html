@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ranking - Finanças+</title>
+  <link rel="stylesheet" href="estilo.css">
+  <link rel="stylesheet" href="tabelas.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header class="topo-site">
+    <div class="logo">
+      <i class="fas fa-wallet"></i> Finanças+
+    </div>
+    <div class="menu-direita">
+      <a href="login.html" class="btn-login">Sair</a>
+      <div class="menu-toggle" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+    <nav class="menu-links" id="menu-links">
+      <a href="index.html">Início</a>
+      <a href="metas.html">Metas</a>
+      <a href="extrato.html">Extrato</a>
+      <a href="relatorios.html">Relatórios</a>
+      <a href="ranking.html" class="link-ranking"></a>
+      <a href="compartilhar.html">Compartilhar</a>
+    </nav>
+  </header>
+
+  <main class="container-ranking">
+    <h1>Ranking de Metas</h1>
+    
+    <div class="ranking-top10">
+      <h2>Top 10 Usuários</h2>
+      <table class="tabela-ranking">
+        <thead>
+          <tr>
+            <th>Posição</th>
+            <th>Usuário</th>
+            <th>Pontuação</th>
+            <th>Metas Concluídas</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Campeão</td>
+            <td>150</td>
+            <td>10</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Segundo Lugar</td>
+            <td>135</td>
+            <td>9</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Terceiro Lugar</td>
+            <td>120</td>
+            <td>8</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Participante</td>
+            <td>105</td>
+            <td>7</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Iniciante</td>
+            <td>90</td>
+            <td>6</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <div class="meu-ranking">
+      <h2>Seu Progresso</h2>
+      <div class="ranking-card">
+        <div class="ranking-info">
+          <h3>Sua Posição: <span class="destaque">40</span></h3>
+          <p>Metas Concluídas: <span class="destaque">3/10</span></p>
+          <p>Progresso Médio: <span class="destaque">65%</span></p>
+        </div>
+        <div class="ranking-grafico">
+          <canvas id="graficoMeuProgresso"></canvas>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="rodape">
+    <div class="rodape-conteudo">
+      <div class="rodape-info">
+        <h3><i class="fas fa-wallet"></i> Finanças+</h3>
+        <p>Sua vida financeira organizada e sob controle</p>
+        <p>contato@financasplus.com.br</p>
+      </div>
+      <div class="rodape-links">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="rodape-copyright">
+      &copy; 2023 Finanças+ - Todos os direitos reservados.
+    </div>
+  </footer>
+
+  <script src="menu.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/tabelas.js"></script>
+  <script>
+    // Gráfico do progresso do usuário
+    document.addEventListener('DOMContentLoaded', function() {
+      const ctx = document.getElementById('graficoMeuProgresso').getContext('2d');
+      new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          labels: ['Concluídas', 'Em andamento', 'Não iniciadas'],
+          datasets: [{
+            data: [3, 4, 3],
+            backgroundColor: ['#27ae60', '#f39c12', '#e74c3c']
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              position: 'bottom'
+            }
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>

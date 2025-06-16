@@ -1,0 +1,144 @@
+/* Estilos específicos para a página de Compartilhar */
+.container-compartilhar {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.titulo-pagina {
+  color: var(--cor-primaria);
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.conquistas-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.conquista-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: var(--sombra);
+  display: flex;
+  gap: 1rem;
+  transition: var(--transicao);
+}
+
+.conquista-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.conquista-icone {
+  font-size: 2rem;
+  color: var(--cor-secundaria);
+  min-width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.conquista-info h3 {
+  color: var(--cor-primaria);
+  margin-bottom: 0.5rem;
+}
+
+.conquista-info p {
+  color: #555;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.btn-compartilhar {
+  background-color: var(--cor-secundaria);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: var(--transicao);
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-compartilhar:hover {
+  background-color: var(--cor-primaria);
+}
+
+.formulario-compartilhar {
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: var(--sombra);
+}
+
+.formulario-compartilhar h2 {
+  color: var(--cor-primaria);
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.formulario-compartilhar textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid var(--cor-borda);
+  border-radius: 4px;
+  resize: vertical;
+  min-height: 100px;
+}
+
+.opcoes-compartilhamento {
+  margin: 1.5rem 0;
+}
+
+.opcoes-compartilhamento h3 {
+  margin-bottom: 1rem;
+  color: var(--cor-primaria);
+}
+
+.opcoes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.opcao-compartilhar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.opcao-compartilhar i {
+  color: var(--cor-primaria);
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .container-compartilhar {
+    margin: 1rem auto;
+  }
+  
+  .titulo-pagina {
+    font-size: 1.5rem;
+  }
+  
+  .conquistas-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .formulario-compartilhar {
+    padding: 1rem;
+  }
+  
+  .opcoes-grid {
+    grid-template-columns: 1fr;
+  }
+}

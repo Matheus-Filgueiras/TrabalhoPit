@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro - Finanças+</title>
+  <link rel="stylesheet" href="Estilo.css">
+  <link rel="stylesheet" href="formularios.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="pagina-cadastro">
+  <main class="container-form">
+    <div class="form-container slide-in">
+      <div class="form-header">
+        <div class="logo-form">
+          <i class="fas fa-wallet"></i> Finanças+
+        </div>
+        <h2>Crie sua conta</h2>
+        <p>Comece agora a organizar suas finanças</p>
+      </div>
+      <form class="formulario" id="formCadastro">
+        <div class="input-group">
+          <i class="fas fa-user"></i>
+          <input type="text" placeholder="Nome completo" required>
+        </div>
+        <div class="input-group">
+          <i class="fas fa-envelope"></i>
+          <input type="email" placeholder="Email" required>
+        </div>
+        <div class="input-group">
+          <i class="fas fa-lock"></i>
+          <input type="password" id="senha" placeholder="Senha" required>
+        </div>
+        <div class="input-group">
+          <i class="fas fa-lock"></i>
+          <input type="password" id="confirmarSenha" placeholder="Confirmar senha" required>
+        </div>
+        <div class="termos">
+          <input type="checkbox" id="termos" required>
+          <label for="termos">Concordo com os Termos de Uso</label>
+        </div>
+        <button type="submit" class="btn-submit">Criar conta</button>
+        <div class="form-links">
+          Já tem uma conta? <a href="login.html">Faça login</a>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <script src="validacao.js"></script>
+</body>
+</html>

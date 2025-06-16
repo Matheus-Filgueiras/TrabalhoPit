@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compartilhar - Finanças+</title>
+  <link rel="stylesheet" href="Estilo.css">
+  <link rel="stylesheet" href="compartilhar.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header class="topo-site">
+    <div class="logo">
+      <i class="fas fa-wallet"></i> Finanças+
+    </div>
+    <div class="menu-direita">
+      <button class="btn-ranking">
+        <i class="fas fa-trophy"></i> Ranking
+      </button>
+      <a href="login.html" class="btn-login">Sair</a>
+      <div class="menu-toggle" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+    <nav class="menu-links" id="menu-links">
+      <a href="index.html">Início</a>
+      <a href="metas.html">Metas</a>
+      <a href="extrato.html">Extrato</a>
+      <a href="relatorios.html">Relatórios</a>
+      <a href="ranking.html" class="link-ranking"></a>
+      <a href="compartilhar.html">Compartilhar</a>
+    </nav>
+  </header>
+
+  <main class="container-compartilhar">
+    <h1 class="titulo-pagina">Compartilhar Conquistas</h1>
+    
+    <div class="conquistas-container">
+      <div class="conquista-card">
+        <div class="conquista-icone">
+          <i class="fas fa-medal"></i>
+        </div>
+        <div class="conquista-info">
+          <h3>Economizador Iniciante</h3>
+          <p>Você economizou mais de R$ 1.000 este mês!</p>
+          <button class="btn-compartilhar">
+            <i class="fas fa-share-alt"></i> Compartilhar
+          </button>
+        </div>
+      </div>
+      
+      <div class="conquista-card">
+        <div class="conquista-icone">
+          <i class="fas fa-trophy"></i>
+        </div>
+        <div class="conquista-info">
+          <h3>Meta Mestre</h3>
+          <p>Você completou 5 metas este mês!</p>
+          <button class="btn-compartilhar">
+            <i class="fas fa-share-alt"></i> Compartilhar
+          </button>
+        </div>
+      </div>
+      
+      <div class="conquista-card">
+        <div class="conquista-icone">
+          <i class="fas fa-star"></i>
+        </div>
+        <div class="conquista-info">
+          <h3>Consistência Financeira</h3>
+          <p>3 meses seguidos com saldo positivo!</p>
+          <button class="btn-compartilhar">
+            <i class="fas fa-share-alt"></i> Compartilhar
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="formulario-compartilhar">
+      <h2>Compartilhar Relatório Personalizado</h2>
+      <form>
+        <div class="input-group">
+          <label for="mensagem">Mensagem:</label>
+          <textarea id="mensagem" placeholder="Adicione uma mensagem personalizada..."></textarea>
+        </div>
+        
+        <div class="opcoes-compartilhamento">
+          <h3>Compartilhar via:</h3>
+          <div class="opcoes-grid">
+            <div class="opcao-compartilhar">
+              <input type="checkbox" id="facebook">
+              <label for="facebook"><i class="fab fa-facebook"></i> Facebook</label>
+            </div>
+            <div class="opcao-compartilhar">
+              <input type="checkbox" id="instagram">
+              <label for="instagram"><i class="fab fa-instagram"></i> Instagram</label>
+            </div>
+            <div class="opcao-compartilhar">
+              <input type="checkbox" id="twitter">
+              <label for="twitter"><i class="fab fa-twitter"></i> Twitter</label>
+            </div>
+            <div class="opcao-compartilhar">
+              <input type="checkbox" id="whatsapp">
+              <label for="whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</label>
+            </div>
+            <div class="opcao-compartilhar">
+              <input type="checkbox" id="email">
+              <label for="email"><i class="fas fa-envelope"></i> Email</label>
+            </div>
+          </div>
+        </div>
+        
+        <button type="submit" class="btn-submit">Compartilhar</button>
+      </form>
+    </div>
+  </main>
+
+  <footer class="rodape">
+    <div class="rodape-conteudo">
+      <div class="rodape-info">
+        <h3><i class="fas fa-wallet"></i> Finanças+</h3>
+        <p>Sua vida financeira organizada e sob controle</p>
+        <p>contato@financasplus.com.br</p>
+      </div>
+      <div class="rodape-links">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="rodape-copyright">
+      &copy; 2023 Finanças+ - Todos os direitos reservados.
+    </div>
+  </footer>
+
+  <script src="menu.js"></script>
+  <script src="efeitos.js"></script>
+</body>
+</html>
